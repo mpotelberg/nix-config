@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/maxlamenace";
 
   imports = [
-    ./../modules/git
+    ./../modules/tools
     ./../modules/terminal
   ];
 

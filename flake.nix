@@ -10,12 +10,18 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nix-vscode-extensions,
     ...
   } @ inputs: 
     let
@@ -27,7 +33,7 @@
       # Available through 'nixos-rebuild --flake .#hostname'
       nixosConfigurations = {
         # FIXME replace with your hostname
-        nixos = nixpkgs.lib.nixosSystem {
+        desktop = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs outputs;};
           # > Our main nixos configuration file <
           modules = [./hosts/desktop/configuration.nix];

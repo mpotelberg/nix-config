@@ -2,19 +2,17 @@
 
 {
   home.packages = with pkgs; [
-    pkgs.uutils-coreutils-noprefix
-    pkgs.gitui
-    pkgs.fselect
-    pkgs.lf
+    pkgs.uutils-coreutils-noprefix # Upgrade to default utils
+    pkgs.fselect # Find files with SQL query
   ];
   
-  programs.neovim = {
+  programs.neovim = { # Text editor
     enable = true;
-    defaultEditor = true;
     vimAlias = true;
   };
-  programs.zoxide.enable = true;
-  programs.zsh = {
+  programs.gitui.enable; # Git interface
+  programs.zoxide.enable = true; # Suggestion
+  programs.zsh = { # Alternative terminal
     enable = true;
     shellAliases = {
       rebuild-system = "~/.system/rebuild-system.sh";
