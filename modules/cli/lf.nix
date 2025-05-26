@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-    xdg.configFile."lf/icons".source = ./icons;
+  xdg.configFile."lf/icons".source = ./icons;
 
   programs.lf = {
     # Help : https://www.youtube.com/watch?v=z8y_qRUYEWU
@@ -22,11 +22,11 @@
     };
 
     settings = {
-        preview = true;
-        hidden = true;
-        drawbox = true;
-        icons = true;
-        ignorecase = true;
-    }
+      preview = true;
+      hidden = true;
+      drawbox = true;
+      # icons = true; Need nerdfonts
+      ignorecase = true;
+    };
   };
 }

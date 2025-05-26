@@ -1,7 +1,6 @@
 {
-  config,
-  lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -9,12 +8,11 @@
   ];
 
   home.packages = with pkgs; [
-    pkgs.pond # Frogs
+    # inputs.pond # Frogs
     pkgs.uutils-coreutils-noprefix # Upgrade to default utils
     # pkgs.fselect # Find files with SQL query
     pkgs.wget # File download
   ];
-
 
   programs.micro.enable = true;
 
@@ -27,11 +25,11 @@
     # Terminal
     enable = true;
     shellAliases = {
-      rebuild = "~/.system/rebuild.sh";
+      rebuild = "~/.nix-config/rebuild.sh";
     };
   };
 
   home.sessionVariables = {
     EDITOR = "micro";
-  }
+  };
 }

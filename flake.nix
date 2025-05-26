@@ -18,7 +18,7 @@
     };
 
     # Frogs, very important
-    pond.url = "gitlab:Morgenkaff/flake-for-pond";
+    # pond.url = "gitlab:Morgenkaff/flake-for-pond";
   };
 
   outputs = {
@@ -26,6 +26,7 @@
     nixpkgs,
     home-manager,
     nix-vscode-extensions,
+    # pond,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -48,7 +49,6 @@
     homeConfigurations = {
       # FIXME replace with your username@hostname
       "maxlamenace@desktop" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         # > Our main home-manager configuration file <
         modules = [./home-manager/home.nix];
