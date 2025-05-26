@@ -42,6 +42,11 @@
         # > Our main nixos configuration file <
         modules = [./hosts/desktop/configuration.nix];
       };
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [./hosts/laptop/configuration.nix];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
