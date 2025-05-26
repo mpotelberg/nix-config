@@ -1,27 +1,25 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, pkgs, inputs, ... }:
+
 {
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
-  ];
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
+    ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.initrd.luks.devices."luks-a79b4ad7-8b72-40f2-ad6d-3e5b793b83e2".device = "/dev/disk/by-uuid/a79b4ad7-8b72-40f2-ad6d-3e5b793b83e2";
   networking.hostName = "desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  
+    nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -89,14 +87,14 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.maxlamenace = {
     isNormalUser = true;
-    description = "Max la Menace";
-    extraGroups = ["networkmanager" "wheel"];
+    description = "Maxime Potelberg";
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      #  thunderbird
+    #  thunderbird
     ];
   };
-
-  home-manager = {
+  
+    home-manager = {
     # also pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -105,17 +103,16 @@
   };
 
   # Install firefox.
-  #  programs.firefox.enable = true;
+  programs.firefox.enable = true;
 
   # Allow unfree packages
-  # nixpkgs.config.allowUnfree = true;
-  # nixpkgs.config.allowUnfreePredicate = pkg: true;
+  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -144,4 +141,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
+
 }
