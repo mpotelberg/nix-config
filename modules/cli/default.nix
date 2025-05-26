@@ -16,7 +16,11 @@
 
   programs.micro.enable = true;
 
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "mpotelberg";
+    userEmail = "maximepotelberg@gmail.com";
+  };
 
   programs.gitui.enable = true; # Git interface
   # programs.zoxide.enable = true; # Suggestion
