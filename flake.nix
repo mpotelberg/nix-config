@@ -11,10 +11,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Every VSCode extensions
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Frogs, very important
+    pond.url = "gitlab:Morgenkaff/flake-for-pond";
   };
 
   outputs = {

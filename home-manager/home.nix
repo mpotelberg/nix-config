@@ -9,7 +9,9 @@
   home.homeDirectory = "/home/maxlamenace";
 
   imports = [
+    ./../modules/cli
     ./../modules/tools
+    ./../modules/apps
   ];
 
   # Programs
