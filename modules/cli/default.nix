@@ -1,14 +1,9 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./lf.nix
   ];
 
   home.packages = with pkgs; [
-    inputs.pond # Frogs
     pkgs.uutils-coreutils-noprefix # Upgrade to default utils
     # pkgs.fselect # Find files with SQL query
     pkgs.wget # File download

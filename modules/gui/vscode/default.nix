@@ -8,7 +8,7 @@
   ];
 
   home.file = {
-    ".config/VSCodium/User/settings.json".source = ./vscode-settings.json;
+    ".config/VSCodium/User/settings.json".source = ./settings.json;
   };
 
   programs.vscode = {
