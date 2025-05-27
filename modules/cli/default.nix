@@ -29,7 +29,7 @@
     # Terminal
     enable = true;
     shellAliases = {
-      rebuild = "~/.nix-config/rebuild.sh";
+      rebuild = "bash ~/.nix-config/rebuild.sh";
     };
   };
 
