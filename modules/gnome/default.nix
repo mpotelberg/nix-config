@@ -1,59 +1,49 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
-  # Not implemented yet
-  # https://wiki.nixos.org/wiki/GNOME
-  # https://discourse.nixos.org/t/howto-disable-most-gnome-default-applications-and-what-they-are/13505/15
-  # https://discourse.nixos.org/t/setting-up-purpose-build-nixos-gnome-for-python-scripts-and-research-no-home-manager/63060/7
+{pkgs, ...}: {
   environment.gnome.excludePackages = with pkgs; [
-    orca
-    evince
-    file-roller
-    geary
-    gnome-disk-utility
-    seahorse
-    sushi
-    sysprof
-    gnome-shell-extensions
-    adwaita-icon-theme
-    nixos-background-info
+    # orca # Screen reader
+    # evince # Document viewer (pdf...)
+    # file-roller # Archive manager
+    geary # Email
+    # gnome-disk-utility # Disk and partition manager
+    # seahorse # Password manager (SSH...)
+    # sushi # File viewer (pdf, music...)
+    # sysprof # System profiling
+    # adwaita-icon-theme
+    # nixos-background-info
     gnome-backgrounds
-    gnome-bluetooth
-    gnome-color-manager
-    gnome-control-center
-    gnome-shell-extensions
-    gnome-tour # GNOME Shell detects the .desktop file on first log-in.
-    gnome-user-docs
-    # glib # for gsettings program
-    gnome-menus
-    # gtk3.out # for gtk-launch program
+    # gnome-bluetooth
+    # gnome-color-manager
+    # gnome-control-center
+    # gnome-shell-extensions
+    gnome-tour # Gnome intro
+    # gnome-user-docs
+    # glib # For gsettings program
+    # gnome-menus
+    # gtk3.out # For gtk-launch program
     # xdg-user-dirs # Update user dirs as described in https://freedesktop.org/wiki/Software/xdg-user-dirs/
     # xdg-user-dirs-gtk # Used to create the default bookmarks
-    baobab
-    epiphany
+    # baobab # Disk analyzer
+    epiphany # Web browser
     gnome-text-editor
     gnome-calculator
-    gnome-calendar
+    # gnome-calendar
     gnome-characters
-    gnome-clocks
-    gnome-console
+    # gnome-clocks
+    # gnome-console
     gnome-contacts
     gnome-font-viewer
-    gnome-logs
-    gnome-maps
+    # gnome-logs
+    # gnome-maps
     gnome-music
-    gnome-system-monitor
+    # gnome-system-monitor
     gnome-weather
-    loupe
-    nautilus
-    gnome-connections
+    # loupe # Image viewer
+    # nautilus # File manager
+    # gnome-connections # Remote desktop
     simple-scan
-    snapshot
-    totem
-    yelp
-    gnome-software
+    # snapshot # Camera
+    # totem # Video viewer
+    # yelp # Help viewer
+    # gnome-software
   ];
 }

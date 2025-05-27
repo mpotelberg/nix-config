@@ -16,9 +16,6 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Frogs, very important
-    # pond.url = "gitlab:Morgenkaff/flake-for-pond";
   };
 
   outputs = {
@@ -26,37 +23,21 @@
     nixpkgs,
     home-manager,
     nix-vscode-extensions,
-    # pond,
     ...
   } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#hostname'
     nixosConfigurations = {
-      # FIXME replace with your hostname
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        # > Our main nixos configuration file <
         modules = [./hosts/desktop/configuration.nix];
       };
+
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        # > Our main nixos configuration file <
         modules = [./hosts/laptop/configuration.nix];
-      };
-    };
-
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#username@hostname'
-    homeConfigurations = {
-      # FIXME replace with your username@hostname
-      "maxlamenace@desktop" = home-manager.lib.homeManagerConfiguration {
-        extraSpecialArgs = {inherit inputs outputs;};
-        # > Our main home-manager configuration file <
-        modules = [./home-manager/home.nix];
       };
     };
   };
