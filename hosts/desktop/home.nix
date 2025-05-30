@@ -3,10 +3,10 @@
   pkgs,
   ...
 }: {
-  imports = [
+  imports = with ./../../modules [
     # ./../modules/gnome
-    ./../modules/cli
-    ./../modules/gui
+    /cli
+    /gui
   ];
 
   programs.home-manager.enable = true;

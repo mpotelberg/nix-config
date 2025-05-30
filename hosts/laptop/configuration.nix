@@ -10,6 +10,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    # Home manager
     inputs.home-manager.nixosModules.default
   ];
 
@@ -79,11 +81,11 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    # jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    # media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -94,25 +96,16 @@
     isNormalUser = true;
     description = "Max la Menace";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
   };
 
+  # Setup home manager
   home-manager = {
-    # also pass inputs to home-manager modules
+    # Pass inputs to home-manager modules
     extraSpecialArgs = {inherit inputs;};
     users = {
-      "maxlamenace" = import ../../home-manager/home.nix;
+      "maxlamenace" = import ./home.nix;
     };
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -6,15 +6,15 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    pkgs.obsidian # Notes and organisation (unfree)
-    pkgs.stremio # Media (unfree)
-    # pkgs.ytui-music # Youtube music CLI
-    # pkgs.legcord # Discord
-    # pkgs.prismlauncher # Minecraft
-    # pkgs.godot # Configurer au prochain projet
-    # pkgs.gimp3 # Image manipulation
-    # pkgs.auto-multiple-choice # Creation et correction de QCM
-    # pkgs.scrcpy # Android display and control over USB
+    obsidian # Notes and organisation (unfree)
+    # stremio # Media (unfree)
+    # ytui-music # Youtube music CLI
+    # legcord # Discord
+    # prismlauncher # Minecraft
+    # godot # Configurer au prochain projet
+    # gimp3 # Image manipulation
+    # auto-multiple-choice # Creation et correction de QCM
+    # scrcpy # Android display and control over USB
   ];
 
   programs.firefox.enable = true;

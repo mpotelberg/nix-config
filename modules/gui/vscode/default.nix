@@ -1,6 +1,8 @@
 {
   pkgs,
   inputs,
+  config,
+  lib,
   ...
 }: {
   home.packages = with pkgs; [
@@ -8,7 +10,7 @@
   ];
 
   home.file = {
-    ".config/VSCodium/User/settings.json".source = ./settings.json;
+    ".config/VSCodium/User/settings.json".source = config.lib.file.mkOutOfStoreSymlink /home/maxlamenace/.nix-config/modules/gui/vscode/settings.json;
   };
 
   programs.vscode = {
