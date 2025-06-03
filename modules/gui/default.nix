@@ -7,9 +7,11 @@
 
   home.packages = with pkgs; [
     obsidian # Notes and organisation (unfree)
-    # stremio # Media (unfree)
+    dorion # Small discord client
+    libreoffice # Office suite
     # ytui-music # Youtube music CLI
-    # legcord # Discord
+    # filezilla # FTP Client
+    # stremio # Media (unfree)
     # prismlauncher # Minecraft
     # godot # Configurer au prochain projet
     # gimp3 # Image manipulation

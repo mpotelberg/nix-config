@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  # Must be imported by configuration.nix
   environment.gnome.excludePackages = with pkgs; [
     # orca # Screen reader
     # evince # Document viewer (pdf...)
@@ -11,7 +12,7 @@
     # adwaita-icon-theme
     # nixos-background-info
     gnome-backgrounds
-    # gnome-bluetooth
+    gnome-bluetooth
     # gnome-color-manager
     # gnome-control-center
     # gnome-shell-extensions
@@ -32,18 +33,20 @@
     # gnome-console
     gnome-contacts
     gnome-font-viewer
-    # gnome-logs
-    # gnome-maps
+    gnome-logs
+    gnome-maps
     gnome-music
     # gnome-system-monitor
     gnome-weather
     # loupe # Image viewer
     # nautilus # File manager
-    # gnome-connections # Remote desktop
+    gnome-connections # Remote desktop
     simple-scan
     # snapshot # Camera
-    # totem # Video viewer
-    # yelp # Help viewer
+    totem # Video viewer
+    yelp # Help viewer
     # gnome-software
   ];
+
+  services.xserver.excludePackages = [pkgs.xterm];
 }

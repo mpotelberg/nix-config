@@ -4,9 +4,9 @@
   ];
 
   home.packages = with pkgs; [
-    pkgs.uutils-coreutils-noprefix # Upgrade to default utils
-    # pkgs.fselect # Find files with SQL query
-    pkgs.wget # File download
+    uutils-coreutils-noprefix # Upgrade to default utils
+    # fselect # Find files with SQL query
+    wget # File download
   ];
 
   programs.bash = {
@@ -14,6 +14,7 @@
     enable = true;
     shellAliases = {
       rebuild = "bash ~/.nix-config/rebuild.sh";
+      testbuild = "bash ~/.nix-config/testbuild.sh";
     };
   };
   programs.micro.enable = true;
