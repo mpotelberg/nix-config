@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    #./../../modules/gnome
     ./../../modules/cli
     ./../../modules/gui
   ];

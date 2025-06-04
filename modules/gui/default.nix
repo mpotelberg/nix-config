@@ -7,9 +7,9 @@
 
   home.packages = with pkgs; [
     obsidian # Notes and organisation (unfree)
-    dorion # Small discord client
     libreoffice # Office suite
-    # ytui-music # Youtube music CLI
+    youtube-music # Youtube music client
+    wasistlos # Whatsapp client
     # filezilla # FTP Client
     # stremio # Media (unfree)
     # prismlauncher # Minecraft
@@ -17,9 +17,11 @@
     # gimp3 # Image manipulation
     # auto-multiple-choice # Creation et correction de QCM
     # scrcpy # Android display and control over USB
+    (discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
   ];
 
-  programs.firefox.enable = true;
-
-  # programs.steam.enable = true; Pas avant le CAPES ! è_é
+  programs.firefox.enable = true; # Web browser
 }

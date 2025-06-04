@@ -14,7 +14,8 @@
     # Home manager
     inputs.home-manager.nixosModules.default
 
-    ./../../modules/gnome
+    # Gnome and utilities
+    ./../../modules/desktop
 
     # Gaming
     #./../../modules/gaming

@@ -1,5 +1,10 @@
 {pkgs, ...}: {
   # Must be imported by configuration.nix
+  environment.systemPackages = with pkgs.gnomeExtensions; [
+    appindicator
+    topicons-plus
+  ];
+
   environment.gnome.excludePackages = with pkgs; [
     # orca # Screen reader
     # evince # Document viewer (pdf...)

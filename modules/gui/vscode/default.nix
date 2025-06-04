@@ -21,7 +21,7 @@
     profiles.default.extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.open-vsx; [
       # Theme
       zhuangtongfa.material-theme
-      pkief.material-icon-theme
+      # pkief.material-icon-theme # Install manually for settings to apply
       pkief.material-product-icons
 
       # General tools

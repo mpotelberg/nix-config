@@ -10,6 +10,12 @@
 
     # Home manager
     inputs.home-manager.nixosModules.default
+
+    # Gnome and utilities
+    ./../../modules/desktop
+
+    # Gaming
+    #./../../modules/gaming
   ];
 
   # Bootloader.

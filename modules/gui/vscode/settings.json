@@ -81,6 +81,7 @@
     "workbench.editor.centeredLayoutFixedWidth": true,
     "workbench.editor.enablePreview": false,
     "workbench.editor.showTabs": "single",
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.layoutControl.enabled": false,
     "workbench.list.smoothScrolling": true,
     "workbench.productIconTheme": "material-product-icons",
@@ -91,6 +92,5 @@
     "workbench.tree.indent": 16,
     "workbench.tree.renderIndentGuides": "onHover",
     "material-icon-theme.hidesExplorerArrows": true,
-    "material-icon-theme.folders.theme": "classic",
-    "workbench.iconTheme": "material-icon-theme"
+    "material-icon-theme.folders.theme": "classic"
 }
