@@ -4,12 +4,6 @@
   ...
 }: {
   imports = [
-    ./../../modules/cli
-    ./../../modules/gui
+    ./../shared/home.nix
   ];
-
-  programs.home-manager.enable = true;
-  home.username = "maxlamenace";
-  home.homeDirectory = "/home/maxlamenace";
-  home.stateVersion = "25.05"; # Don't touch
 }

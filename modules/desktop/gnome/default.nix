@@ -1,5 +1,11 @@
 {pkgs, ...}: {
   # Must be imported by configuration.nix
+  services.xserver.desktopManager.xterm.enable = false;
+
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
   environment.systemPackages = with pkgs.gnomeExtensions; [
     appindicator
     topicons-plus
@@ -52,6 +58,4 @@
     yelp # Help viewer
     # gnome-software
   ];
-
-  services.xserver.excludePackages = [pkgs.xterm];
 }

@@ -10,6 +10,7 @@
     libreoffice # Office suite
     youtube-music # Youtube music client
     wasistlos # Whatsapp client
+    zeal # Offline programmation documentation
     # filezilla # FTP Client
     # stremio # Media (unfree)
     # prismlauncher # Minecraft
