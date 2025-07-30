@@ -15,12 +15,21 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-74ac37d1-72fa-4ae2-a5d8-d0c34f814a8e".device = "/dev/disk/by-uuid/74ac37d1-72fa-4ae2-a5d8-d0c34f814a8e";
+  boot.initrd.luks.devices."luks-dbfce2e5-1709-491f-bbda-e6b002446fc7".device = "/dev/disk/by-uuid/dbfce2e5-1709-491f-bbda-e6b002446fc7";
   networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Sleep on close lid (to avoid chromebook bug)
-  services.logind.lidSwitch = "sleep";
+  # services.logind.lidSwitch = "sleep";
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "be";
+    # variant = "nodeadkeys";
+  };
+
+  # Configure console keymap
+  console.keyMap = "be-latin1";
 
   # Define a user account.
   users.users.maxlamenace = {

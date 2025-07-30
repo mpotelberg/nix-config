@@ -4,7 +4,7 @@
     },
     "chat.commandCenter.enabled": false,
     "editor.cursorBlinking": "phase",
-    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorSmoothCaretAnimation": "off",
     "editor.detectIndentation": false,
     "editor.fontFamily": "Ubuntu Mono",
     "editor.fontSize": 16,

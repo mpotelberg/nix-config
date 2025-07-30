@@ -6,9 +6,10 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  environment.systemPackages = with pkgs.gnomeExtensions; [
-    appindicator
-    topicons-plus
+  services.udev.packages = with pkgs; [gnome-settings-daemon];
+
+  environment.systemPackages = with pkgs; [
+    gnome-tweaks
   ];
 
   environment.gnome.excludePackages = with pkgs; [
@@ -23,7 +24,7 @@
     # adwaita-icon-theme
     # nixos-background-info
     gnome-backgrounds
-    gnome-bluetooth
+    # gnome-bluetooth
     # gnome-color-manager
     # gnome-control-center
     # gnome-shell-extensions
@@ -48,13 +49,13 @@
     gnome-maps
     gnome-music
     # gnome-system-monitor
-    gnome-weather
+    # gnome-weather
     # loupe # Image viewer
     # nautilus # File manager
     gnome-connections # Remote desktop
-    simple-scan
+    # simple-scan
     # snapshot # Camera
-    totem # Video viewer
+    # totem # Video viewer
     yelp # Help viewer
     # gnome-software
   ];

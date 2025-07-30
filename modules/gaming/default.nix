@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     # Show computer stats during gameplay, turn on by adding "mangohud %command%" to launch options
     # mangohud
+    prismlauncher
   ];
 
   # Set temporary system optimisations while the game is running, turn on by adding "gamemoderun %command%" to launch options

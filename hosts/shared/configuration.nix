@@ -8,7 +8,7 @@
     # Home manager
     inputs.home-manager.nixosModules.default
 
-    ./../../modules/desktop/kde
+    ./../../modules/desktop/gnome
 
     ./../../modules/gaming
   ];
@@ -40,15 +40,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "fr";
-    variant = "";
-  };
-
-  # Configure console keymap
-  console.keyMap = "fr";
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;

@@ -5,6 +5,7 @@
     wget # File download
     python314 # Python
     unrar # Rar decompression
+    unzip
   ];
 
   programs = {

@@ -19,6 +19,15 @@
   networking.hostName = "desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "fr";
+    variant = "";
+  };
+
+  # Configure console keymap
+  console.keyMap = "fr";
+
   # Define a user account.
   users.users.maxlamenace = {
     isNormalUser = true;

@@ -6,6 +6,7 @@
   imports = [
     ./../../modules/cli
     ./../../modules/gui
+    ./../../modules/desktop/gnome/gnomeExtensions
   ];
 
   programs.home-manager.enable = true;

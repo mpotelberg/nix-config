@@ -13,7 +13,6 @@
     zeal # Offline programmation documentation
     # filezilla # FTP Client
     # stremio # Media (unfree)
-    # prismlauncher # Minecraft
     # godot # Configurer au prochain projet
     # gimp3 # Image manipulation
     # auto-multiple-choice # Creation et correction de QCM
@@ -22,6 +21,10 @@
       withOpenASAR = true;
       withVencord = true;
     })
+    protonmail-desktop # Proton mail and calendar
+    proton-pass # Proton password manager
+    protonvpn-gui # Proton vpn
+    sweethome3d.application # Home modeler
   ];
 
   programs.firefox.enable = true; # Web browser
