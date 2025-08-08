@@ -24,7 +24,8 @@
     protonmail-desktop # Proton mail and calendar
     proton-pass # Proton password manager
     protonvpn-gui # Proton vpn
-    sweethome3d.application # Home modeler
+    freecad # CAD Software
+    typstwriter # Typst editor and live previewer
   ];
 
   programs.firefox.enable = true; # Web browser

@@ -36,7 +36,7 @@
       ms-python.debugpy
       ms-python.black-formatter
       nvarner.typst-lsp
-      myriad-dreamin.tinymist
+      myriad-dreamin.tinymist # Install manually because binary is broken otherwise
       jnoortheen.nix-ide
       # godot-tools
     ];

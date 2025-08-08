@@ -6,6 +6,9 @@
     python314 # Python
     unrar # Rar decompression
     unzip
+    typst
+    typst-live
+    wifi-qr
   ];
 
   programs = {
